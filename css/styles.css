@@ -891,3 +891,180 @@ li a:hover {
         }
     }
 }
+
+@media (width <=1440px) {
+    body {
+        min-width: fit-content;
+    }
+
+    .hero {
+        height: auto;
+    }
+
+    .releases-container {
+        max-width: 90%;
+    }
+
+    .container {
+        max-width: none;
+        min-width: 100%;
+    }
+
+    .footer {
+        min-width: auto;
+    }
+}
+
+/* MEDIA MOBILE */
+@media (width <=768px) {
+
+    .header {
+        max-width: 100vw;
+    }
+
+    .container-img {
+        grid-template-columns: 1fr;
+    }
+
+    .header_warning p,
+    .header_warning span {
+        font-size: 0.7rem;
+    }
+
+    .wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .wrappertextImg {
+        font-size: 3.5rem;
+    }
+
+    .wrappertextImg h2 {
+        font-size: 5rem;
+    }
+
+    /* TODO: substituir esse c-2 pela classe de display none do bootstrap. */
+    .c-2 {
+        display: none;
+    }
+
+    .input-group input::placeholder {
+        font-size: 0.7rem;
+    }
+
+    .container-glass {
+        min-height: 100%;
+    }
+
+    .wrapper-annoucement {
+        min-width: auto;
+    }
+
+    .wrapper-annoucement .supersale {
+        font-size: 1rem;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .wrapper-annoucement p {
+        margin-bottom: 0;
+    }
+
+    p.supersale+p {
+        font-size: 0.6rem;
+        text-align: center;
+    }
+
+    .descount {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .wrapper-img img {
+        min-height: 12rem;
+        max-width: 10rem;
+        object-fit: cover;
+    }
+
+    .releases-container {
+        max-width: 100dvw;
+    }
+
+    .arrow {
+        display: none;
+    }
+
+    .carousel-track {
+        gap: 0.5rem;
+    }
+
+    .product-card {
+        max-width: 9.5rem;
+    }
+
+    .discount {
+        min-width: 4rem;
+        font-size: 0.6rem;
+        padding: 2px 4px;
+        margin-left: 0;
+    }
+
+    .container {
+        --bs-gutter-x: 0;
+    }
+
+    .wrapperCaneca {
+        min-height: 0;
+    }
+
+    .wrappertextImg {
+        max-width: none;
+        padding: 0 1.1rem;
+    }
+
+    .wrappertextImg h2 {
+        font-size: 1.5rem;
+    }
+
+    .wrappertextImg p {
+        font-size: 0.8rem;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .column-img {
+        padding: 0.6rem 0;
+    }
+
+    .img-caneca-2 {
+        min-height: 0;
+        max-width: 100%;
+    }
+
+    .column-text p {
+        font-size: 0.7rem;
+        font-weight: bold;
+    }
+
+    .background-img-location {
+        padding: 0.8rem;
+    }
+
+    .container-caneca-avanti {
+        padding: 0 0.9rem;
+    }
+
+    .container-caneca-avanti .column-text h2 {
+        color: #000000;
+        font-size: 1.2rem;
+        margin-bottom: 1.2rem !important;
+    }
+
+    .banner-avanti {
+        background-position: bottom !important;
+    }
+}
