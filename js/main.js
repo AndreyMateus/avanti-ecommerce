@@ -88,7 +88,7 @@ function firstCarrossel() {
         }
     });
 }
-firstCarrossel();
+// firstCarrossel();
 
 //! SEGUNDO CARROSSEL (IMPROVISADO - FUTURAMENTE REFATORAR - Pegar os carroseis com o querySelectorAll ou Utilizar a mesma função para ambos.)
 function secondCarrossel() {
