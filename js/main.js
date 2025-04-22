@@ -14,7 +14,7 @@ svgsArrow.forEach(svg => {
 
 
 //  SCRIPT do CARRSSEL
-const imageSrc = "../assets/camiseta_vitrine.png";
+const imageSrc = "/assets/camiseta_vitrine.png";
 function firstCarrossel() {
     const carousel = document.getElementById('carousel');
     const leftArrow = document.querySelector('.arrow-left');
@@ -166,4 +166,4 @@ function secondCarrossel() {
     });
 
 }
-secondCarrossel();
+// secondCarrossel();
