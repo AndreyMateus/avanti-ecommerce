@@ -14,7 +14,7 @@ svgsArrow.forEach(svg => {
 
 
 //  SCRIPT do CARRSSEL
-const imageSrc = "/assets/camiseta_vitrine.png";
+const imageSrc = "../assets/camiseta_vitrine.png";
 function firstCarrossel() {
     const carousel = document.getElementById('carousel');
     const leftArrow = document.querySelector('.arrow-left');
@@ -26,20 +26,65 @@ function firstCarrossel() {
     for (let i = 1; i <= totalItems; i++) {
         const card = document.createElement('div');
         card.className = 'product-card';
-        card.innerHTML = `
-    <div class="badge">NOVO</div>
-    <img src="${imageSrc}" />
-    <h3><h3> Lorem ipsum dolor sit amet consectetuer adipiscing elit </h3> </h3>
-   <div class="wrapper-prices-card">
-     <div class="price-old">R$ 100,00</div>
-    <div class="wrapper-prices">
-      <span class="price-new">R$ 79,90</span>
-      <span class="discount">10% OFF</span>
-    </div>
-    <p class="credit">Ou em até <strong>10x de R$ 7,90</strong></p>
-   </div>
-    <button class="buy-button">Comprar</button>
-  `;
+
+        // Badge
+        const badge = document.createElement('div');
+        badge.className = 'badge';
+        badge.textContent = 'NOVO';
+        card.appendChild(badge);
+
+        // Imagem
+        const img = document.createElement('img');
+        img.src = imageSrc;
+        card.appendChild(img);
+
+        // Título
+        const title = document.createElement('h3');
+        title.textContent = 'Lorem ipsum dolor sit amet consectetuer adipiscing elit';
+        card.appendChild(title);
+
+        // Wrapper de preços
+        const wrapperPricesCard = document.createElement('div');
+        wrapperPricesCard.className = 'wrapper-prices-card';
+
+        // Preço antigo
+        const priceOld = document.createElement('div');
+        priceOld.className = 'price-old';
+        priceOld.textContent = 'R$ 100,00';
+        wrapperPricesCard.appendChild(priceOld);
+
+        // Wrapper interno de preços
+        const wrapperPrices = document.createElement('div');
+        wrapperPrices.className = 'wrapper-prices';
+
+        // Preço novo
+        const priceNew = document.createElement('span');
+        priceNew.className = 'price-new';
+        priceNew.textContent = 'R$ 79,90';
+        wrapperPrices.appendChild(priceNew);
+
+        // Desconto
+        const discount = document.createElement('span');
+        discount.className = 'discount';
+        discount.textContent = '10% OFF';
+        wrapperPrices.appendChild(discount);
+
+        wrapperPricesCard.appendChild(wrapperPrices);
+
+        // Crédito
+        const credit = document.createElement('p');
+        credit.className = 'credit';
+        credit.innerHTML = 'Ou em até <strong>10x de R$ 7,90</strong>'; // Aqui usamos um pouco de HTML
+        wrapperPricesCard.appendChild(credit);
+
+        card.appendChild(wrapperPricesCard);
+
+        // Botão
+        const button = document.createElement('button');
+        button.className = 'buy-button';
+        button.textContent = 'Comprar';
+        card.appendChild(button);
+
         carousel.appendChild(card);
     }
 
@@ -88,7 +133,7 @@ function firstCarrossel() {
         }
     });
 }
-// firstCarrossel();
+firstCarrossel();
 
 //! SEGUNDO CARROSSEL (IMPROVISADO - FUTURAMENTE REFATORAR - Pegar os carroseis com o querySelectorAll ou Utilizar a mesma função para ambos.)
 function secondCarrossel() {
