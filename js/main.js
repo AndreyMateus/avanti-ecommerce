@@ -1,3 +1,19 @@
+// SCRIPT ESCONDER E APARECER MENU de Contatos (Institucional / Central de ajuda / Atendimento)
+const svgsArrow = document.querySelectorAll('.arrow_menu-contacts');
+
+svgsArrow.forEach(svg => {
+    svg.addEventListener('click', (e) => {
+        if (svg.parentElement.parentElement.offsetHeight != 70) {
+            svg.parentElement.parentElement.style.maxHeight = '70px';
+        } else {
+            svg.parentElement.parentElement.style.maxHeight = '400px';
+        }
+    });
+
+});
+
+
+//  SCRIPT do CARRSSEL
 const imageSrc = "../assets/camiseta_vitrine.png";
 function firstCarrossel() {
     const carousel = document.getElementById('carousel');
