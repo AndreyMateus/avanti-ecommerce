@@ -53,7 +53,6 @@ function menuMobile() {
 }
 menuMobile();
 
-
 //  SCRIPT do CARRSSEL
 const imageSrc = "../assets/camiseta_vitrine.png";
 function firstCarrossel() {
@@ -312,3 +311,64 @@ if (window.innerWidth > 1024) {
     });
 }
 
+// INPUTS e SUBMIT
+let universalValueInput = '';
+
+const desktopInput = document.querySelector("input");
+const glassInput = document.querySelector('.container-glass svg');
+const btnRemoveResultSearch = document.querySelector('.btn-input-searched');
+
+desktopInput.addEventListener("keydown", e => {
+    if (e.key == 'Enter') {
+        handleCaptureValueOfInput(e, desktopInput);
+        createAResultSearch(universalValueInput);
+    }
+});
+
+function handleCaptureValueOfInput(event, input) {
+    universalValueInput = input.value;
+    input.value = '';
+}
+
+function createAResultSearch(value, isAMobileMenu = false) {
+    const resultOfSearch = document.querySelector(isAMobileMenu ? '.search-result-mobile' : '.search-result');
+    resultOfSearch.style.visibility = 'visible';
+    resultOfSearch.style.opacity = '1';
+
+    const paragraphOfResultOfSearch = document.querySelector(isAMobileMenu ? '.search-result-mobile p' : '.search-result p');
+    paragraphOfResultOfSearch.innerText = `Você buscou por: ${value}`;
+}
+
+btnRemoveResultSearch.addEventListener('click', (e) => {
+    const father = e.currentTarget.parentElement;
+    father.style.visibility = 'invisible';
+    father.style.opacity = '0';
+    universalValueInput = '';
+});
+
+glassInput.addEventListener('click', (e) => {
+    const input = document.getElementById('inputDesktop');
+    universalValueInput = input.value;
+    input.value = '';
+    createAResultSearch(universalValueInput);
+});
+
+// MOBILE INPUT
+const inputMobile = document.querySelector('#inputMobile');
+const glassMobile = document.querySelector('#glassMobile');
+
+inputMobile.addEventListener("keydown", e => {
+    if (e.key == 'Enter') {
+        const valueMobileInput = e.currentTarget.value;
+        universalValueInput = valueMobileInput;
+        createAResultSearch(universalValueInput, true);
+        inputMobile.value = '';
+    }
+});
+
+glassMobile.addEventListener("click", e => {
+    const valueMobileInput = inputMobile.value;
+    universalValueInput = valueMobileInput;
+    createAResultSearch(universalValueInput, true);
+    inputMobile.value = '';
+});

@@ -33,7 +33,6 @@
             </section>
 
             <header class="header">
-                <!-- Menu Mobile -->
                 <nav class="navbar navbar-expand-lg d-flex d-lg-none ">
                     <div class="container-fluid">
                         <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
@@ -58,8 +57,8 @@
                             </div>
                         </div>
 
-                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                            aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas offcanvas-end offcanvas-start offcanvas-fullwidth" tabindex="-1"
+                            id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                             <div class="offcanvas-header">
                                 <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
@@ -453,13 +452,19 @@
                         <div class="container-input">
                             <div class="input-group position-relative">
                                 <input type="text" placeholder="Digite aqui o que você procura"
-                                    aria-label="Digite aqui o que você procura">
+                                    aria-label="Digite aqui o que você procura" id="inputDesktop">
                                 <div class="container-glass position-absolute end-0">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="100" height="30px"
                                         fill="currentColor" class="bi bi-search text-dar" viewBox="0 0 16 16">
                                         <path
                                             d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                                     </svg>
+                                </div>
+                                <div class="search-result">
+                                    <p></p>
+                                    <button type="button"
+                                        class="btn-close text-bg-danger position-absolute btn-input-searched"
+                                        aria-label="Close"></button>
                                 </div>
                             </div>
                         </div>
@@ -488,14 +493,18 @@
                 <!-- INPUT SEARCH (MOBILE) -->
                 <div class="container-input d-lg-none">
                     <div class="input-group position-relative">
-                        <input type="text" class="form-control" placeholder="Digite aqui o que você procura"
-                            aria-label="Digite aqui o que você procura" aria-describedby="button-addon2">
+                        <input type="text" placeholder="Digite aqui o que você procura" id="inputMobile">
                         <div class="container-glass position-absolute end-0">
                             <svg xmlns="http://www.w3.org/2000/svg" width="100" height="30px" fill="currentColor"
-                                class="bi bi-search text-dar" viewBox="0 0 16 16">
+                                class="bi bi-search text-dar" viewBox="0 0 16 16" id="glassMobile">
                                 <path
                                     d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                             </svg>
+                        </div>
+                        <div class="search-result-mobile bg-white">
+                            <p></p>
+                            <button type="button" class="btn-close text-bg-danger position-absolute btn-input-searched"
+                                aria-label="Close"></button>
                         </div>
                     </div>
                 </div>
@@ -664,8 +673,6 @@
                             </div>
                         </li>
                         <!-- outros itens do menu principal -->
-
-
                         <li class="menu-item dropdown">
                             <a href="#"><b>Departamento</b></a>
                             <div class="submenu submenu2">
@@ -717,8 +724,6 @@
                                 </div>
                             </div>
                         </li>
-
-
 
                         <li><a href="#">Departamento</a></li>
                         <li><a href="#">Departamento</a></li>
