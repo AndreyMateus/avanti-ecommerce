@@ -356,6 +356,7 @@ glassInput.addEventListener('click', (e) => {
 // MOBILE INPUT
 const inputMobile = document.querySelector('#inputMobile');
 const glassMobile = document.querySelector('#glassMobile');
+const btnRemoveResultSearchMobile = document.querySelector('#btnInputMobile');
 
 inputMobile.addEventListener("keydown", e => {
     if (e.key == 'Enter') {
@@ -371,4 +372,11 @@ glassMobile.addEventListener("click", e => {
     universalValueInput = valueMobileInput;
     createAResultSearch(universalValueInput, true);
     inputMobile.value = '';
+});
+
+btnRemoveResultSearchMobile.addEventListener('click', (e) => {
+    const father = e.currentTarget.parentElement;
+    father.style.visibility = 'invisible';
+    father.style.opacity = '0';
+    universalValueInput = '';
 });
