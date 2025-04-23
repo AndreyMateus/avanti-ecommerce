@@ -113,6 +113,7 @@
 
 .navbar {
     background-color: #fff;
+    font-family: var(--font-nunito-sans) !important;
 }
 
 .container-input {
@@ -529,6 +530,8 @@ li a:hover {
 }
 
 .submenu {
+    padding-top: 1rem;
+    min-width: 1600px;
     display: none;
     position: absolute;
     background-color: #fff;
@@ -541,6 +544,31 @@ li a:hover {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease;
+}
+
+.submenu2 {
+    left: -186%;
+}
+
+.submenu2-lists {
+    display: flex;
+}
+
+.submenu2 div h2 {
+    font-family: var(--font-nunito-sans);
+    font-size: 1rem;
+    font-weight: bold;
+    padding-left: 1rem;
+}
+
+.submenu2 div:nth-child(1) {
+    padding-top: 1rem;
+    padding-left: 0.5rem;
+}
+
+.submenu2 .texto-banner {
+    top: 15%;
+    left: 64%;
 }
 
 .submenu li {
@@ -612,7 +640,9 @@ li a:hover {
 
 .submenu-banner {
     position: relative;
-    width: 320px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
     z-index: 10;
     border-radius: 10px;
 }
@@ -649,7 +679,7 @@ li a:hover {
 .texto-banner {
     position: absolute;
     top: 20%;
-    left: 10%;
+    left: 44%;
     color: #fff;
     font-size: 3rem;
     font-weight: 300;
@@ -878,8 +908,56 @@ li a:hover {
     background-color: #333;
 }
 
+/* MENU MOBILE */
+/* Estilização do dropdown multinível */
+.dropend .dropdown-toggle::after {
+    float: right;
+    margin-top: 8px;
+}
 
-/* MEDIA */
+.dropdown-menu {
+    margin: 0;
+}
+
+.dropend .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-left: 0.125rem;
+}
+
+.max-heigth-dropdown {
+    max-height: 500px !important;
+}
+
+.main-dropdown {
+    width: 250px;
+}
+
+/* Estilização para evitar problemas de tamanho */
+.dropdown-menu {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.offcanvas-body .submenu-banner img {
+    width: 100%;
+}
+
+.offcanvas-body ul:nth-child(1) {
+    margin-bottom: 1rem;
+}
+
+.offcanvas-body .submenu-banner .background-gradient {
+    width: 100%;
+    background-image: linear-gradient(to right, #00000042, #000000de);
+}
+
+.offcanvas-body .submenu-banner .texto-banner {
+    top: 10%;
+    left: 10%;
+}
+
+/* MEDIAS */
 @media (width >=1920px) {
     .banner-avanti {
         min-width: 1920px;
@@ -889,6 +967,12 @@ li a:hover {
             font-size: 1.5rem;
             padding: 2rem;
         }
+    }
+}
+
+@media (width > 1023px) {
+    .hero {
+        margin-top: 14rem;
     }
 }
 
@@ -915,14 +999,11 @@ li a:hover {
     }
 }
 
-@media(width >=768px) and (width <=1020px) {
-    .column-img img {
-        width: 100%;
-    }
-}
-
 /* MEDIA MOBILE */
 @media (width <=768px) {
+    .navbar {
+        padding-right: 1rem;
+    }
 
     .header {
         max-width: 100vw;
@@ -1043,7 +1124,7 @@ li a:hover {
     }
 
     .column-img {
-        padding: 0.6rem 0;
+        padding: 0.6rem 1rem;
     }
 
     .img-caneca-2 {
@@ -1199,6 +1280,10 @@ li a:hover {
         align-items: center;
     }
 
+    .hero {
+        margin-top: 12rem;
+    }
+
 }
 
 @media (width <=360px) {
@@ -1208,5 +1293,32 @@ li a:hover {
 
     .header {
         max-width: none;
+    }
+}
+
+/* ORDEM de PRIORIDADE específica para TABLETS */
+@media (width >=768px) and (width <=1020px) {
+    .column-img img {
+        width: 100%;
+    }
+
+    .wrapper-annoucement .supersale {
+        font-size: 2rem;
+    }
+
+    p.supersale+p {
+        font-size: 1rem;
+    }
+
+    .descount {
+        font-size: 1.8rem;
+    }
+
+    .wrapper-img img {
+        max-width: 15rem;
+    }
+
+    .hero {
+        margin-top: 10rem;
     }
 }

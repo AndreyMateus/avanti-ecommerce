@@ -1,16 +1,57 @@
 // SCRIPT ESCONDER E APARECER MENU de Contatos (Institucional / Central de ajuda / Atendimento)
-const svgsArrow = document.querySelectorAll('.arrow_menu-contacts');
+function showAndHideList() {
+    const svgsArrow = document.querySelectorAll('.arrow_menu-contacts');
 
-svgsArrow.forEach(svg => {
-    svg.addEventListener('click', (e) => {
-        if (svg.parentElement.parentElement.offsetHeight != 70) {
-            svg.parentElement.parentElement.style.maxHeight = '70px';
-        } else {
-            svg.parentElement.parentElement.style.maxHeight = '400px';
-        }
+    svgsArrow.forEach(svg => {
+        svg.addEventListener('click', (e) => {
+            if (svg.parentElement.parentElement.offsetHeight != 70) {
+                svg.style.transform = 'rotate(0deg)';
+                svg.parentElement.parentElement.style.maxHeight = '70px';
+            } else {
+                svg.style.transform = 'rotate(180deg)';
+                svg.parentElement.parentElement.style.maxHeight = '400px';
+            }
+        });
+
     });
 
-});
+}
+showAndHideList();
+
+// SCRIPT MENU MOBILE
+function menuMobile() {
+    document.addEventListener('DOMContentLoaded', function () {
+        // Evita que o menu principal feche ao clicar em seus itens
+        document.querySelectorAll('.main-dropdown').forEach(function (element) {
+            element.addEventListener('click', function (e) {
+                e.stopPropagation();
+            });
+        });
+
+        // Inicializa todos os dropdowns com a opção de não fechar ao clicar dentro
+        var dropdownElementList = document.querySelectorAll('.dropdown-toggle');
+        dropdownElementList.forEach(function (dropdownToggleEl) {
+            var dropdown = new bootstrap.Dropdown(dropdownToggleEl, {
+                autoClose: false
+            });
+
+            // Opcional: Adiciona um evento para abrir os dropdowns no hover
+            /*
+            dropdownToggleEl.parentElement.addEventListener('mouseenter', function() {
+              dropdown.show();
+            });
+            */
+        });
+
+        // Evita que os submenus fechem ao clicar em seus itens
+        document.querySelectorAll('.dropend .dropdown-menu').forEach(function (element) {
+            element.addEventListener('click', function (e) {
+                e.stopPropagation();
+            });
+        });
+    });
+}
+menuMobile();
 
 
 //  SCRIPT do CARRSSEL
@@ -256,7 +297,7 @@ function secondCarrossel() {
     });
 
 }
-if (window.innerWidth > 768) {
+if (window.innerWidth > 1024) {
     secondCarrossel();
 } else {
     let resizeTimeout;
@@ -264,9 +305,8 @@ if (window.innerWidth > 768) {
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
-            if (window.innerWidth > 768) {
+            if (window.innerWidth > 1024) {
                 secondCarrossel();
-                console.log("foi");
             }
         }, 200); // espera 200ms após o último resize
     });
